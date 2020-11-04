@@ -1,0 +1,65 @@
+#TASK ONE NUMBERS AND VARIABLES
+
+#1.Create three variables in a single line and assign values to them in such a manner that each one of them belongs to a different data type.
+E.g. :
+a = 1,
+b = 2.01,
+c = 'string'
+Ans: 
+a, b, c = 11, 3.11, 'Sunny'
+
+#2.Create a variable of type complex and swap it with another variable of type integer.
+Ans:
+a, b, c = 11, 3.11, 'Sunny'
+d = 3+6j
+
+a,d = d,a
+print(a,d)
+
+#3.Swap two numbers using a third variable and do the same task without using any third variable.
+Ans:
+#Swap two numbers using a third variable 
+e=4
+f=5
+temp=0
+temp=e
+e=f
+f=temp
+print(e,f)
+
+#without using third variable
+e,f = f,e
+print(e,f)
+
+
+#4.Write a program that takes input from the user and prints it using both Python 2.x and Python 3.x Version.
+Ans: 
+g=input("enter value: ")
+print(g)
+print g
+
+
+#5.Write a program to complete the task given below: 
+Ask users to enter any 2 numbers in between 1-10 , add the two numbers and keep the sum in another variable called z. Add 30 to z and store the output in variable result and print result as the final output.
+Ans:
+number1 = int(input("enter first number from 1-10: "))
+number2 = int(input("enter second number from 1-10: "))
+z=number1+number2
+result=z+30
+print(result)
+
+#6.Write a program to check the data type of the entered values.
+HINT: Printed output should say - The data type of the input value is : int/float/string/etc
+Ans: 
+value = eval(input("enter value: "))
+print(type(value))
+
+#7.Create Variables using formats such as Upper CamelCase, Lower CamelCase, SnakeCase and  UPPERCASE.
+Ans:
+name = "John"
+Age = 25
+birth_date = "April, 29th"
+
+#8.If one data type value is assigned to ‘a’ variable and then a different data type value is assigned to ‘a’ again. Will it change the value? If Yes then Why?
+Ans: 
+Yes, it’ll change the value. If you have assigned a value a = 1 and then you assigned the value of a to 2 and print a then it’ll print 2 instead of 1 because python only remembers values assigned later and that’s how python works.
