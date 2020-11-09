@@ -1,0 +1,78 @@
+#1. Create a list of 10 elements of four different data types like int, string, complex and float.
+List1 = [1, 2, 3, 4, "Sunny", "John", 3+6j, 4.6, 5.4, 1.1]
+
+#2. Create a list of size 5 and execute the slicing structure
+List=[1, 2, 3, 4, 5, 6]
+a= List[0:3]
+print(a)
+
+#3. Write a program to get the sum and multiply of all the items in a given list.
+from functools import reduce
+List=[1, 2, 3, 4, 5, 6]
+addition = reduce(lambda a,b:a+b, List)
+print(addition)
+multiplication = reduce(lambda a,b:a*b, List)
+print(multiplication)
+
+#4. Find the largest and smallest number from a given list.
+List=[1, 2, 3, 4, 5, 6]
+maximum = max(List)
+minimum = min(List)
+print("Max: ", maximum)
+print("Min: ", minimum)
+
+#5. Create a new list which contains the specified numbers after removing the even numbers from a
+predefined list.
+List = [1, 2, 3, 4, 5, 6]
+List_even = []
+
+for i in List:
+    if not i % 2 == 0:
+        List_even.append(i)
+print(List_even)
+
+
+#6. Create a list of elements such that it contains the squares of the first and last 5 elements between
+1 and30 (both included).
+
+l=list(range(1,31))
+L=[]
+for i in l:
+    L.append(i*i)
+print(L[:5]+L[-5:])
+
+#7. Write a program to replace the last element in a list with another list.
+l1 = [1, 2, 3, 4, 5]
+l2 = [6, 7, 8, 9, 10]
+
+l = l1[0:(len(l1)-1)] + l2
+
+print(l)
+
+
+#8. Create a new dictionary by concatenating the following two dictionaries:
+a = {1 : 10, 2 : 20}
+b = {3 : 30, 4 : 40}
+c = {**a,**b}
+print(c)
+
+
+#9. Create a dictionary that contain numbers in the form(x:x*x) where x takes all the values between 1
+and n(both 1 and n included).
+a=int(input("Enter the number of values you need in the dictionary: "))
+d = {}
+
+for i in range(1,a+1):
+    d[i]= i**2
+print(d)
+
+#10. Write a program which accepts a sequence of comma-separated numbers from console and
+generates a list and a tuple which contains every number in the form of string.
+
+a = input("enter numbers separated by ',': ")
+l = a.split(",")
+t = tuple(l)
+print(l, t)
+
+
+
