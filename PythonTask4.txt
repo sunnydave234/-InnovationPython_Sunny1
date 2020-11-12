@@ -91,7 +91,14 @@ a= list(map(lambda i: i**2, (list(filter(lambda n: n%2==0, L)))))
 print(a)
 
 #12. Write a function to compute 5/0 and use try/except to catch the exceptions
+a=5
+b=0
 
+try:
+    c=a/b
+    print(c)
+except Exception:
+    print("Can not divide by zero.")
 
 
 #13. Flatten the list [1,2,3,4,5,6,7] into 1234567 using reduce().
@@ -108,3 +115,14 @@ print(a)
 
 #15. Write a program in Python to multiply the elements of a list by itself using a traditional function
 and pass the function to map() to complete the operation.
+l=[1,2,3,4,5,6]
+def mul(n):
+    return n*n
+r=list(map(mul, l))
+print(r)
+
+#16. What is the output of the following codes:
+(i) 2
+(ii) NameError: name 'f' is not defined
+     after f
+     after f?
