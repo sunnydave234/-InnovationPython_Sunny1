@@ -1,0 +1,151 @@
+#1. Write a program that calculates and prints the value according to the given formula:
+Q= Square root of [(2*C*D)/H]
+Following are the fixed values of C and H:
+C is 50.
+H is 30.
+D is a variable whose values should be input to your program in a comma-separated sequence.
+
+
+import math
+
+C=50
+H=30
+D=input("enter numbers separated by ',': ")
+L1=D.split(',')
+L1=[int(a) for a in L1]
+res=[]
+
+for i in L1:
+    Q=math.sqrt((2*C*i)/H)
+    res.append(Q)
+print(res)
+
+
+#2. Define a class named Shape and its subclass Square. The Square class has an init function which
+takes length as argument. Both classes have an area function which can print the area of the shape
+where Shape’s area is 0 by default.
+
+class Shape:
+    def __init__(self):
+        pass
+
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self,length):
+        self.length=length
+
+    def area(self):
+        a = self.length * self.length
+        return a
+
+b=Square(3)
+print(b.area())
+print(Shape().area())
+
+
+#3. Create a class to find three elements that sum to zero from a set of n real numbers
+
+class SumZero:
+    def threeZeroSum(self,L):
+        L.sort()
+        n=len(L)
+        res=[]
+        for i in range(n-1):
+
+            left= i
+            right=n-1
+            s=L[i]
+
+            while left<right:
+                if s+L[left]+L[right]==0:
+                    res.append([s,L[left],L[right]])
+                    left+=1
+                    right-=1
+                elif s+L[left]+L[right]<0:
+                    left+=1
+                elif s+L[left]+L[right]>0:
+                    right-=1
+        return res
+
+a=SumZero()
+print(a.threeZeroSum([-25,-10,-7,-3,2,4,8,10]))
+
+
+
+#4. Create a Time class and initialize it with hours and minutes.
+Create a method addTime which should take two Time objects and add them.
+E.g.- (2 hour and 50 min)+(1 hr and 20 min) is (4 hr and 10 min)
+Create another method displayTime which should print the time.
+Also create a method displayMinute which should display the total minutes in the Time.
+E.g.- (1 hr 2 min) should display 62 minute.
+
+class Time:
+
+    def __init__(self,hours,minutes):
+        self.hours=hours
+        self.minutes=minutes
+
+    def addTime(t1,t2):
+        t=Time(0,0)
+        t.hours= t1.hours+t2.hours
+        t.minutes= t1.minutes+t2.minutes
+        if t1.minutes + t2.minutes > 60:
+            t.minutes= t.minutes-60
+            t.hours += 1
+        return t
+    def displayTime(self):
+        print(f"{self.hours} hours and {self.minutes} min")
+
+    def displayMinute(self):
+        print(f"{self.minutes + 60*self.hours} minutes")
+
+a=Time(1,30)
+b=Time(2,40)
+c=Time.addTime(a,b)
+c.displayTime()
+c.displayMinute()
+
+#5. Write a Person class with an instance variable “age” and a constructor that takes an integer as a
+parameter. The constructor must assign the integer value to the age variable after confirming the
+argument passed is not negative; if a negative argument is passed then the constructor should set
+age to 0 and print “Age is not valid, setting age to 0”. In addition, you must write the following instance
+methods:
+yearPasses() should increase age by the integer value that you are passing inside the function.
+amIOld() should perform the following conditional actions:I
+f age is between 0 and <13, print “You are young”.
+If age is >=13 and <=19 , print “You are a teenager”.
+Otherwise, print “You are old”.
+
+
+class Person:
+
+    def __init__(self,age):
+        if age<0:
+            print("Age is not valid, setting age to 0")
+            self.age=0
+        else:
+            self.age=age
+
+    def yearPasses(self,increase):
+        self.age += increase
+        return self.age
+
+    def amIOld(self):
+        if self.age>=0 and self.age<13:
+            print("You are young")
+
+        elif self.age>=13 and self.age<=19:
+            print("You are a teenager")
+
+        else:
+            print("You are old")
+
+age=[-1,4,10,16,18,64,38]
+for i in age:
+    a=Person(i)
+    a.amIOld()
+a=Person(38)
+print(a.yearPasses(4))
+
