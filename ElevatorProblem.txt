@@ -1,0 +1,100 @@
+#Elevator Problem
+
+
+import time
+
+print("******----Welcome to the elevator program----******"
+      "to exit press 0")
+currentFloor=1
+NoOfFloors=6
+
+while True:
+    requestedFloor=int(input("Enter the floor you're on: "))
+    if requestedFloor > 6 or requestedFloor<1:
+        print("Please enter valid number: ")
+
+    elif requestedFloor == currentFloor:
+        print("you're on the same floor")
+
+    elif currentFloor>requestedFloor:
+        print(f"lift is at {currentFloor}")
+        while currentFloor>requestedFloor:
+            currentFloor -= 1
+            time.sleep(0.3)
+            print(f"lift reach to {currentFloor-1} floor")
+
+        print(f"Lift arrived at {currentFloor}th floor")
+        print("Doors Open")
+
+
+
+        destination = int(input("Enter the floor number: "))
+        print("Doors Closed")
+
+
+
+
+        if destination>currentFloor:
+
+            while destination>currentFloor:
+                currentFloor += 1
+                print(f"Lift arrived at {currentFloor-1}th floor")
+                time.sleep(0.3)
+                if destination == currentFloor:
+
+                    print(f"You have arrived at {currentFloor} floor")
+                    print("Doors Open")
+
+        elif destination < currentFloor:
+
+            while destination < currentFloor:
+                currentFloor -= 1
+                print(f"Lift arrived at {currentFloor-1}th floor")
+                time.sleep(0.3)
+                if destination == currentFloor:
+                    print(f"You have arrived at {currentFloor} floor")
+                    print("Doors Open")
+
+
+    elif currentFloor<requestedFloor:
+        print(f"lift is at {currentFloor}")
+        while currentFloor<requestedFloor:
+            currentFloor += 1
+            time.sleep(0.3)
+            print(f"lift reach to {currentFloor-1} floor")
+        print(f"Lift arrived at {currentFloor}th floor")
+        print("Doors Open")
+
+        destination = int(input("Enter the floor number: "))
+        print("Doors Closed")
+
+
+        if destination > currentFloor:
+
+            while destination > currentFloor:
+                currentFloor += 1
+                print(f"lift reach to {currentFloor-1} floor")
+                time.sleep(0.3)
+                if destination == currentFloor:
+                    print(f"You have arrived at {currentFloor} floor")
+                    print("Doors Open")
+
+        elif destination < currentFloor:
+
+            while destination < currentFloor:
+                currentFloor -= 1
+                print(f"lift reach to {currentFloor-1} floor")
+                time.sleep(0.3)
+                if destination == currentFloor:
+                    print(f"You have arrived at {currentFloor} floor")
+                    print("Doors Open")
+
+
+
+    elif currentFloor == requestedFloor:
+
+        print(f"Lift arrived at {currentFloor}th floor")
+        print("Doors Open")
+
+    elif requestedFloor == 0:
+        break
