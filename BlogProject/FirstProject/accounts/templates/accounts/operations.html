@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="container-lg">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+                        <a class="btn btn-primary btn-sm btn-block" href="{% url 'createBlog' %}">Create Blog</a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Blog Name</th>
+                    <th>Content</th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+                {% for i in blogname %}
+                    <tr>
+                        <td>{{i.blogname}}</td>
+                        <td>{{i.content}}</td>
+                        <td><a href="{% url 'updateBlog' i.id %}">Update</a></td>
+                        <td><a href="{% url 'deleteBlog' i.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
